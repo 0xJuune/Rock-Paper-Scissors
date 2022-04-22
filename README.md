@@ -2,8 +2,11 @@
 This is another project that's a part of The Odin Project coursework. The goal is to create a game of "Rock Paper Scissors" in JavaScript. 
 
 -Must have a computer player that randomly selects an input.
+
 -Must have a text-input for user's selection.*
+
 -Must have a "Best-of-5" mode.
+
 -Must report who the winner is and keep score. 
 
 *Later on we'll be adding graphics, but in the current version it's just based in the console. Text-input may be replaced with mouse-based selection.
