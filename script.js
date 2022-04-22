@@ -5,21 +5,21 @@ let r = options[0]
 let p = options[1]
 let s = options[2]
 
-let userText = prompt("Rock, Paper, or Scissors?")
-
-let user
+let userText = NaN
 let userAnswer = NaN
 let computerIndexSelection = NaN
 
 let userScore = 0
 let computerScore = 0
 
-
 // Randomizes a Number 0-2 for the computer player and stores it in computerIndexSelection. Will be used later to select Hand
 let computerRandomize = () => {computerIndexSelection = Math.floor(Math.random() * options.length)}
 
 // Takes user's typed choice, and uses it to select one of three letter variables for choosing a Hand. 
-let userInput = () => {userAnswer = userText.charAt(0).toLowerCase(); userAnswer = eval(userAnswer)}
+let userInput = () => {
+    userText = prompt("Rock, Paper, or Scissors?")
+    userAnswer = userText.charAt(0).toLowerCase(); userAnswer = eval(userAnswer)
+}
 
 // Refreshes Hand selections and handles the hand comparison logic for win conditions.
 let playRound = () => {
