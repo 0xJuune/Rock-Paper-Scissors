@@ -10,6 +10,7 @@ let userText = prompt("Rock, Paper, or Scissors?")
 let user
 let userAnswer = NaN
 let computerIndexSelection = NaN
+
 let userScore = 0
 let computerScore = 0
 
@@ -25,19 +26,39 @@ let playRound = () => {
 computerRandomize() 
 userInput()   
 console.log("You Picked: " + userAnswer)
-console.log("CPU Picked: " + computerIndexSelection)
+console.log("CPU Picked: " + options[computerIndexSelection])
 options.push(options[0]) // Duplicates options[0] and adds it to the end of the array, so it can be numerically above scissors in Index for win condition logic. It's located here so it doesn't get included in computerRandomize()
 if (userAnswer == options[computerIndexSelection + 1]) {
-    console.log("You Win!")
+    console.log("You Win the Round!")
     userScore = userScore + 1
 } else if (userAnswer == options[computerIndexSelection]) {
-    console.log("Tie Game, try again.")
+    console.log("Tie Round, try again.")
 } else {
-    console.log("You LOSE!!!!11!1!")
+    console.log("You lose this round.")
     computerScore = computerScore + 1
 }
 options.pop() // Removes the duplicated version of options[0] located at the end of the array. ([3])
 console.log("Score - You: " + userScore + " CPU:" + computerScore)
 }
 
-playRound()
+
+
+// Shows the results of the Best-of-5 Match. Recursively plays one additional round if there's a tie.
+let matchScore = () => {if (userScore > computerScore) { 
+    console.log("You Win the Game!!!")
+} else if (computerScore > userScore){
+    console.log("You LOSE!!1!1!!!111")
+} else {
+    console.log("tiebreaker!")
+    playRound()
+    matchScore()
+}}
+
+// Loop for the Best-of-5 Gameplay.
+let game = () => { 
+    for (let i = 0; i < 5; i++){
+        playRound()}
+        matchScore()
+}
+        
+game()
