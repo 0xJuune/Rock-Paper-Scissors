@@ -7,8 +7,9 @@ body {
 }
 
 h1 {
-    color: hsl(0, 31%, 19%);
-    margin: 0;
+    color: hsl(0, 41%, 29%);
+    font-size: 35pt;
+    margin: 8px;
     padding: 0;
 }
 
